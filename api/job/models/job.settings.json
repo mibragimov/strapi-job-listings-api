@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "name": "job"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "location": {
+      "type": "string"
+    },
+    "company": {
+      "via": "jobs",
+      "model": "company"
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "Junior",
+        "Midweight",
+        "Senior"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "languages": {
+      "type": "string"
+    },
+    "tools": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}
